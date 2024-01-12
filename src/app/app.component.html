@@ -1,0 +1,23 @@
+<p>A pseudo 3D</p>
+Only required as arguments the array with the 5 images
+<p>
+  <button (click)="carousel.prev()">prev</button>
+  <button (click)="carousel.next()">next</button>
+  <select #select (change)="carousel.indexToFront(select.value)">
+    <option *ngFor="let i of [0, 1, 2, 3, 4]">{{ i }}</option>
+  </select>
+</p>
+<pseudo-3d-carousel
+  class="custom"
+  #carousel
+  [images]="images"
+  [radius]="200"
+  [top]="150"
+  [timer]="300"
+  [minScale]=".25"
+></pseudo-3d-carousel>
+
+<pseudo-3d-carousel
+  [images]="images2" (select)="message='you click on image '+$event"
+></pseudo-3d-carousel>
+{{message}}

@@ -1,0 +1,7 @@
+/* Add application styles & imports to this file! */
+
+.custom .carousel>div img {
+  border-radius: 50%!important;
+  border:2px solid white;
+}
+
